@@ -1,0 +1,244 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage[backend=bibtex]{biblatex}
+
+
+\RequirePackage{titlesec}
+\RequirePackage{tikz}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+
+% LONG or SHORT Resume
+\newif\iflong
+\longtrue
+%\longfalse
+
+% Create a tag
+% Usage: \cvtag{<tag label>}
+\definecolor{darkGrey}{HTML}{989898}
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=black!70,rounded corners=0.5ex,
+  inner xsep=1ex,inner ysep =0.7ex,text height=1.3ex,text depth=.25ex]{#1};
+}
+
+\newcommand\tags[1]{
+  \footnotesize{\foreach \n in {#1}{\cvtag{\texttt{\n}}}}
+}
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{ \textbf{--} #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithTags}[3]{
+  \item\small{
+    \textbf{#1}{ \textbf{--} #2 \\ \underline{Keywords:} {#3} \vspace{1pt}} 
+  }
+}
+
+\newcommand{\resumeItemNoHeader}[1]{
+  \item\small{
+    { #1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\newcommand{\resumeSubItemNoHeader}[1]{\resumeItemNoHeader{#1}\vspace{-4pt}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingSmallNoItalics}[4]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & \small#2 \\
+      {\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingSmallNoBold}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small#1 & \small#2
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\referenceItem}[3]{
+  \vspace{-2pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {#1} & #3 \\
+      \textit{\small#2} \\
+    \end{tabular*} %\vspace{-5pt}
+}
+
+\newcommand{\referenceItemNoEmail}[2]{
+  \vspace{-2pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {#1}  \\
+      \textit{\small#2} \\
+    \end{tabular*} %\vspace{-5pt}
+}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://anilyelam.com/}{\Large Anil Yelam}} \\
+  \href{http://anilyelam.com}{http://anilyelam.com} & 
+  \underline{Email}: \href{mailto:ayelam AT ucsd.edu}{ayelam AT ucsd.edu}       \\
+  
+\end{tabular*}
+
+%----------STATEMENT-----------------
+\section{Statement}
+{\small I am broadly interested in building/improving systems 
+and networking stacks that underpin modern cloud platforms. 
+At UC San Diego, I am advised by \textbf{Prof.\ Alex Snoeren} 
+and my current work focuses on developing systems for remote/
+disaggregated memory architectures.} \vspace{-5pt}
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+  \resumeSubheadingSmallNoItalics
+  {University of California San Diego}{San Diego, CA}
+  {PhD in Computer Science} 
+  {Fall 2018 - Present}
+\resumeSubheadingSmallNoItalics
+  {Indian Institute of Technology Kharagpur}{Kharagpur, India}
+  {B.Tech. in Computer Science and Engineering}
+  {Aug. 2010 -- July. 2014}
+  \resumeSubHeadingListEnd
+
+%-----------Publications-----------------
+\section{Publications}
+    \resumeSubHeadingListStart
+
+    \resumeSubItem{\href{https://dl.acm.org/doi/pdf/10.1145/3387514.3405895}
+    {\textbf{SmartNIC Performance Isolation with FairNIC: 
+      Programmable Networking for the Cloud}}}
+
+    {\vspace{2pt}
+    Stewart Grant\textbf{*}, \textbf{Anil Yelam*}, Maxwell Bland 
+      and Alex C. Snoeren. \textit{SIGCOMM ’20}}
+    {\vspace{-2pt} (\textbf{*}Co-first authors)}
+    
+    \resumeSubItem{\href{https://dl.acm.org/doi/pdf/10.1145/3387514.3405895}
+    {\textbf{Covert Communication In The Cloud With Lambdas}}}
+
+    {\vspace{2pt}
+    \textbf{Anil Yelam}, Shibani Subbareddy, Keerthana Ganesan, 
+      Stefan Savage and Ariana Mirian. \textit{The Web Conference ’21}}
+    
+    \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Recent Projects}
+  \resumeItemListStart
+  \resumeItemWithTags{High-Performance CPU scheduling on Remote Memory  (In Progress)}
+      {Memory disaggregation decouples and pools CPU and DRAM in rack 
+      to provide resource efficiency benefits but it comes at the cost of application 
+      performance due to increased memory latencies. I'm working on a CPU scheduler 
+      that hides this cost for highly-parallel applications while retaining traditional 
+      programming abstractions for backwards compatibility.}
+      {Disaggregated Memory, CXL, Remote Paging, Userfaultfd, Shenango, Memcached, LinuxMM}
+  \resumeItemWithTags{NIC-assisted object serialization for managed runtimes}
+      {Serialization consumes a significant portion of computation in modern 
+      data platforms like Spark. I explored the feasibility of offloading this work 
+      to NICs using their DMA capabilities to gather and serialize Java objects 
+      during transmit.}
+      {Apache Spark, RDMA, PCIe \& DMA concepts, JVM development}
+  \resumeItemWithTags{Covert channel in Cloud with Serverless functions}
+      {Demonstrated the potential for a covert channel in the Cloud using serverless 
+      functions (lambdas) on major clouds like AWS and Azure. We developed a new co-residence 
+      detection technique for lambdas (a la MAC protocols) that breaks cloud isolation
+      to detect lambdas running on the same underlying server, enabling the covert 
+      communication.}
+      {Cloud security, Lambdas, Covert channels, Cloud cartography}
+  \resumeItemWithTags{Multi-tenancy in Programmable NICs}
+      {Offloading computation to programmable NICs offers a scalable way for network 
+      processing at higher (40\&100G) network speeds. In this work, we developed 
+      performance isolation mechanisms on these NICs to enable these offloading benefits for 
+      tenant VMs in the cloud, enabling easier adoption of these NICs in the Cloud. }
+      {SoC SmartNICs, NIC Drivers \& Firmware, Linux SKB, DPDK, C, Python}
+  \resumeItemListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheadingSmallNoBold
+  {Research Collaborator, VMware}{Summer 2021 -- Present}
+\resumeSubheadingSmallNoBold
+  {Research Intern, VMware (\textbf{Mentors:} Radhika Niranjan Mysore, Marcos K. Aguilera)} {Summer 2021}
+\resumeSubheadingSmallNoBold
+  {Teaching Assistant, Graduate Distributed Systems}{Spring 2020}    
+\resumeSubheadingSmallNoBold
+  {Software Engineer, Microsoft Azure}{2014 -- 2018}
+\resumeSubHeadingListEnd
+
+%-----------AWARDS-----------------
+\section{Awards and Achievements}
+  \resumeSubHeadingListStart
+    \resumeSubItemNoHeader
+      {\textbf{Institute Silver Medal} and \textbf{Bigyan Sinha Prize} for the best academic performance at IIT Kharagpur, 2014.}
+    \resumeSubItemNoHeader
+      {Top 0.1\% in top-tier engineering entrance exams in India (JEE, AIEEE) that saw over a million applicants, 2010.}
+    \resumeSubItemNoHeader
+      {Multiple promotions during the three years at Microsoft for exceptional performance in the Azure Database team.}    
+    \resumeSubItemNoHeader
+      {\textbf{Patent} for Automated Database Index Recommendations for improvements in Azure SQL Database, 2015.}
+  \resumeSubHeadingListEnd
+%-------------------------------------------
+\end{document}
